@@ -5,6 +5,14 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-amaranth: #872543;
+  --color-cream: #fefefe;
+  --color-grape: #533659;
+  --color-soda: #7a4a6f;
+  --color-rose: #df9ca4;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
