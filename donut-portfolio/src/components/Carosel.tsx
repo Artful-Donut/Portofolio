@@ -6,10 +6,13 @@ import { IoArrowBackCircleOutline } from "react-icons/io5";
 // https://dev.to/rakumairu/simple-react-carousel-24m0
 
 type Props = {
-  caroselItems: any[],
+  caroselItems: any[]
+  children: React.ReactNode
   autoscrollSpeed?: number
+  width?: number
+  height?: number
 }
-function Carosel({ caroselItems, autoscrollSpeed }: Props) {
+function Carosel({ caroselItems, children, autoscrollSpeed, width = 500, height = 300}: Props) {
   const [curIndex, setCurIndex] = useState(0);
 
   // automatic scrolling
@@ -49,28 +52,24 @@ function Carosel({ caroselItems, autoscrollSpeed }: Props) {
   }
 
   return (
-    <div id='carosel container' className='bg-rose'>
-      <div id='carosel wrapper' className='flex items-center bg-grape'>
+    <div id='carosel container' className='text-amaranth'>
+      <div id='carosel wrapper' className='flex justify-center items-center'
+      style={{height: height + 'px'}}>
         <IoArrowBackCircleOutline size={30}
           onClick={handleBack}
-          className='' />
+          className='cursor-pointer hover:text-rose transition-colors duration-200' />
 
-        <div id='carosel content wrapper' className='flex mx-3 w-20 relative overflow-hidden'>
+        <div id='carosel content wrapper' className='flex mx-3 relative overflow-hidden'
+        style={{width: width + 'px'}}>
           <div id='carosel items' className='flex transition-transform duration-300'
             style={{ transform: `translateX(-${curIndex * (100 / caroselItems.length)}%)` }}>
-            {caroselItems.map((value, index) => {
-              return (
-                <div key={index}
-                  className='flex justify-center items-center align-middle size-20 bg-blue-50'>
-                  <h1 className='text-amaranth'>{value}</h1>
-                </div>
-              );
-            })}
+            {children}
           </div>
         </div>
 
         <IoArrowForwardCircleOutline size={30}
-          onClick={handleForward} />
+          onClick={handleForward} 
+          className='cursor-pointer hover:text-rose transition-colors duration-200'/>
       </div>
     </div>
   );
