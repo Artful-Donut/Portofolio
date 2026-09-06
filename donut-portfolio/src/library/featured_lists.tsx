@@ -39,7 +39,7 @@ export const featured_projects: caroselItem[] = [
     },
     {
         title: "Mahou Learning",
-        description: "A Japanese Flashcard app with SRS and a Magical Girl Pet Simulator!\nAvailable on Android for Closed Testing!"
+        description: "A Japanese Flashcard app with SRS and a Magical Girl Pet Simulator!\nAvailable on Android for Closed Testing! Contact me to get access."
     },
     {
         title: "Bedrot",

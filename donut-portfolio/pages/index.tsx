@@ -20,14 +20,14 @@ export default function Home() {
   }
 
   return (
-    <div className="flex-col bg-cream">
-      <NavigationBar></NavigationBar>
+    <div className="flex flex-col min-h-screen bg-cream ">
+      <NavigationBar />
       <div id='pageContents' className="flex mt-10">
-        <div id='infoPart' className="flex-1 justify-start h-screen">
+        <div id='infoPart' className="flex basis-1/4 justify-center-safe w-1/2">
           <InfoWidget />
         </div>
 
-        <div id='contentPart' className="flex-2 justify-self-center">
+        <div id='contentPart' className="flex basis-3/4 justify-center">
           <div id='portfolio section' className="flex-col">
 
             {caroselComponent("Featured Projects", featured_projects, 4000)}
@@ -35,7 +35,7 @@ export default function Home() {
             {caroselComponent("Featured Shop Items", featured_shop_items, 3000)}
 
             <div id='blog stuff' className="flex flex-col items-center">
-              <h1 className='text-amaranth text-center'>Recent Blog Posts</h1>
+              <h1 className='py-2 text-amaranth text-center'>Recent Blog Posts</h1>
               <hr className="mx-auto w-3/4 text-rose border-2 rounded-2xl" />
               <div id='featured blog post' className="flex justify-center content-center my-3 p-3 w-1/2 rounded-sm border-2 border-soda">
                 <p className="text-rose text-center">Blogging TBD</p>
@@ -48,5 +48,6 @@ export default function Home() {
 
       <Footer />
     </div>
+
   );
 }
