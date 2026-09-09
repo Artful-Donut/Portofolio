@@ -78,16 +78,16 @@ function Portfolio() {
         </div>
       }
       children={
-        <div id='post list' className='grid w-3/4'>
+        <div id='post list' className='lg:columns-2 w-3/4'>
           {posts && filteredPosts.map((post, index) => {
             const sanitizedHTML = DOMpurify.sanitize(post.content);
             const date = post.published.slice(0, 10).replaceAll('-', '.');
             const usedLabels = post.labels.filter((label) => isFilter(label))
 
             return (
-              <div id='individual post' key={index} className='flex flex-col lg:w-1/2 w-2/3 basis-1/2 m-1 p-4 border-4 border-rose rounded-3xl 
+              <div id='individual post' key={index} className='flex flex-col break-inside-avoid lg:w-10/12 w-2/3 basis-1/2 m-1 p-4 border-4 border-rose rounded-3xl 
               hover:shadow-xl hover:shadow-rose hover:basis-2/3 duration-100 wrap-anywhere'>
-                <div id='title spot' className='flex xl:flex-row lg:justify-between xl:items-end mb-1 flex-col items-start'>
+                <div id='title spot' className='flex xl:flex-row lg:justify-between xl:items-end mb-1 h-min flex-col items-start'>
                   <span id='date' className='flex items-center text-rose'>
                     <p>date: </p>
                     <p className='opacity-50 text-lg'>{date}</p>
