@@ -4,7 +4,7 @@ import Link from 'next/link'
 function InfoWidget() {
 
     return (
-        <div className='flex-col ml-5 sm:w-xsm md:w-50'>
+        <div className='flex-col sm:w-xsm md:w-50'>
             <Link href='/'>
                 <div id='name'
                     className='p-2 m-2 mb-6 rounded-sm bg-rose shadow-md shadow-amaranth'>

@@ -59,8 +59,8 @@ function Carosel({ caroselItems, children, autoscrollSpeed, width = 500, height 
           onClick={handleBack}
           className='cursor-pointer hover:text-rose transition-colors duration-200' />
 
-        <div id='carosel content wrapper' className='flex mx-3 relative overflow-hidden'
-        style={{width: width + 'px'}}>
+        <div id='carosel content wrapper' className='flex items-center content-center mx-3 relative overflow-hidden'
+        style={{width: width + 'px', height: '100%'}}>
           <div id='carosel items' className='flex transition-transform duration-300'
             style={{ transform: `translateX(-${curIndex * (100 / caroselItems.length)}%)` }}>
             {children}

@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #7a4a6f;
 }
 
 @theme {
@@ -23,7 +23,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #7a4a6f;
     --foreground: #ededed;
   }
 }
@@ -38,7 +38,6 @@ html, body {
 
 p {
   font-family: 'Noto Sans JP';
-  font-size: var(--text-sm);
 }
 
 h1 {
