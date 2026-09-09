@@ -4,14 +4,16 @@ import InfoWidget from "../components/InfoWidget";
 
 export default function Layout({ children, infoWidgetBelowContent }) {
     return (
-        <div className="flex flex-col min-h-screen bg-cream static">
+        <div className="flex flex-col min-h-dvh bg-cream">
             <NavigationBar />
-            <div id='pageContents' className="relative top-0 flex flex-1 mt-10">
-                <div id='infoPart' className="flex flex-col basis-1/4 items-center-safe ml-5 w-1/2 relative">
-                    <div id='infoPart Sticky' className="sticky top-24">
+            <div id='pageContents' className="flex flex-col flex-1 lg:items-baseline items-center lg:flex-row lg:mt-10">
+                <div id='infoPart' className="flex flex-col lg:basis-1/4 items-center-safe ml-5 lg:w-1/4 w-min lg:sticky lg:top-10">
+
+                    <div id='info small screen wrap' className="lg:block lg:relative w-min absolute top-0">
                         <InfoWidget />
-                        {infoWidgetBelowContent}
                     </div>
+                    {infoWidgetBelowContent}
+
 
                 </div>
 
@@ -19,9 +21,9 @@ export default function Layout({ children, infoWidgetBelowContent }) {
                     {children}
                 </div>
             </div>
-           <div className="relative bottom-0 left-0 right-0">
-            <Footer />
-           </div>
+            <div className="flex justify-center relative bottom-0">
+                <Footer />
+            </div>
         </div>
     )
 }

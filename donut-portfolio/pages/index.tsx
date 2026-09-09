@@ -8,15 +8,22 @@ export default function Home() {
 
   function caroselComponent(title: string, list: caroselItem[], link: string, autoScrollSpeed?: number) {
     return (
-      <div className="flex flex-col text-center">
+      <div className="flex flex-col text-center ">
         <hr className='text-grape border' />
         <Link href={link}>
           <h1 className='py-2 text-amaranth hover:text-soda hover:opacity-75 duration-200'>{title}</h1>
         </Link>
         <hr className="mx-auto w-3/4 text-rose border-2 border-dotted rounded-2xl" />
-        <Carosel caroselItems={list} autoscrollSpeed={autoScrollSpeed}>
-          {mapCarosel(list)}
-        </Carosel>
+        <div id='normal size' className='md:hidden'>
+          <Carosel caroselItems={list} autoscrollSpeed={autoScrollSpeed} width={300}>
+            {mapCarosel(list, 300)}
+          </Carosel>
+        </div>
+        <div id="small screen size" className='md:block hidden'>
+          <Carosel caroselItems={list} autoscrollSpeed={autoScrollSpeed}>
+            {mapCarosel(list)}
+          </Carosel>
+        </div>
 
         <hr className='text-grape border' />
       </div>

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 function InfoWidget() {
 
     return (
-        <div className='flex-col sm:w-xsm md:w-50'>
+        <div className='flex-col items-center justify-center w-xsm md:w-50'>
             <Link href='/'>
                 <div id='name'
                     className='p-2 m-2 mb-6 rounded-sm bg-rose shadow-md shadow-amaranth'>
@@ -12,7 +12,7 @@ function InfoWidget() {
                 </div>
             </Link>
 
-            <div id='about' className='p-4 m-2 rounded-sm w-full bg-rose shadow-md shadow-amaranth'>
+            <div id='about' className='lg:flex lg:flex-col p-4 m-2 rounded-sm w-full hidden bg-rose shadow-md shadow-amaranth'>
                 <section id='qualifications' className='mb-2'>
                     <p className='font-bold text-amaranth'>
                         Digital Artist | Graphic Designer | Game Developer | Streamer</p>
@@ -36,6 +36,7 @@ function InfoWidget() {
                  */}
 
             </div>
+
         </div>
     )
 }
