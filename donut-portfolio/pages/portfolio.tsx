@@ -92,7 +92,9 @@ function Portfolio() {
                     <p>date: </p>
                     <p className='opacity-50 text-lg'>{date}</p>
                   </span>
-                  <span className='text-soda lg:text-center text-xl'>{post.title}</span>
+                  <a href={post.url} target='_blank'>
+                    <span className='text-soda lg:text-center text-lg cursor-pointer hover:text-xl hover:font-semibold hover:opacity-75 duration-200'>{post.title}</span>
+                  </a>
                   <span id='tags' className=''>
                     {usedLabels.map((label: FilterTypes, index) =>
                       <p onClick={() => handleSetFilter(label)} key={index}
